@@ -27,7 +27,7 @@ This documentation refers to deployment and post deployment instructions for run
 
 ## Post Deployment Steps
 
-* Verify that Azure deployment is sucessful. 
+* Verify that Azure deployment is sucessful.  You should wait for about 3 minutes after deployment is sucessful to allow kubernetes resources to be ready before you start further. 
 
 * Connect to AKS Cluster via Cloudshell or  ```az cli ```. See [this](https://docs.microsoft.com/en-us/azure/aks/kubernetes-walkthrough#connect-to-the-cluster) for more information abotu connecting to AKS Clusters. 
  ```
