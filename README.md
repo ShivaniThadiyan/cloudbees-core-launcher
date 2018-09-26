@@ -81,13 +81,15 @@ kubectl exec cjoc-0 -- cat /var/jenkins_home/secrets/initialAdminPassword
   *   ![Unlock Core](images/opscenterready.PNG)
   
 * CloudBees Core is now deployed sucessfully and is ready to use. See CloudBees Core [official documentation](https://go.cloudbees.com/docs/cloudbees-core/cloud-intro/) for further configurations and information.
-  *   ![Unlock Core](images/opscenterready.PNG)
+  *   ![Unlock Core](images/opscenterloggedin.PNG)
 
 
 ## Cleaning up 
 This deployment uses [Azure Container Instances](https://azure.microsoft.com/en-us/pricing/details/container-instances/) as bootstrap deployment. You can delete the ACI instance created by deployment on sucessful completion. Although it doesn't cost anything since the ACI is in terminated state, it is advised to cleanup the ACI after sucessful completion of **Post Deployment Steps** given in this document.
 
 ACI name would be **coreBootstrapContainerExistingAKS** if you're using existing AKS Cluster , **coreBootstrapContainerNewAKS** if you're creating a new AKS cluster as a part of deployment.
+
+
 ![ACI](images/ACI.PNG)
 
 ## Troubleshooting
