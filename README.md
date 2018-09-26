@@ -44,7 +44,7 @@ kubectl get pods
 kubectl exec cjoc-0 -- cat /var/jenkins_home/secrets/initialAdminPassword
  ```
   *   ![Get Pswd](images/initialadminpassword.PNG)
-* CloudBees Core is published to interview via Ingress Controller. Let's find out the ingress route details for CJOC web interface. This would be something like  ```cjoc.X.X.X.X.xip.io ```
+* CloudBees Core is published to interview via Ingress Controller. Let's find out the ingress details for CJOC web interface. This would be something like  ```cjoc.X.X.X.X.xip.io ```. Make a note of this URL. 
 
  ```
  kubectl get ingress
@@ -55,6 +55,33 @@ kubectl exec cjoc-0 -- cat /var/jenkins_home/secrets/initialAdminPassword
 * CLick on Next and provide license details,  install required pluging and create users for admin interface. 
 
 * On Sucessful completion, you can login to CJOC interface and start using CloudBees Core.  See CloudBees Core [official documentation](https://go.cloudbees.com/docs/cloudbees-core/cloud-intro/) for further configurations and information.
+
+
+## CloudBees Core Setup
+
+* Launch a Web Browser and browse to the CJOC URL copied from last step. This will open CJOC interface. Enter the Admin password copied from previous section.
+  *   ![Unlock Core](images/unlock-jenkins.PNG)
+
+* Click on Next and provide license details, You can also choose to signup for a trial here. 
+
+  *   ![Unlock Core](images/license.PNG)
+  
+* Customize your Jenkins by installing all suggested plugings or select what all plugins you'd want to install. 
+
+  *   ![Unlock Core](images/plugins.PNG)
+
+* Plugin installation should start now, Click Next on completion. 
+
+  *   ![Unlock Core](images/installingplugins.PNG)
+  
+* Create an Admin User, This will be used to logint to **CJOC**.
+  *   ![Unlock Core](images/createadminuser.PNG)
+  
+* Operations Center is now ready to use. Click on **Start Using Operations Center** to begin
+  *   ![Unlock Core](images/opscenterready.PNG)
+  
+* CloudBees Core is now deployed sucessfully and is ready to use. See CloudBees Core [official documentation](https://go.cloudbees.com/docs/cloudbees-core/cloud-intro/) for further configurations and information.
+  *   ![Unlock Core](images/opscenterready.PNG)
 
 
 ## Cleaning up 
