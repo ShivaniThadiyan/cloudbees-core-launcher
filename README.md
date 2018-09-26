@@ -33,19 +33,23 @@ This documentation refers to deployment and post deployment instructions for run
  ```
 az aks get-credentials --resource-group myAKSCluster --name myAKSCluster
  ```
+
 * Verify deployments by ensuring **cjoc-0** pod is running. If status is creating etc, you should wait around 2 minutes for completion and try this command again. 
  ```
 kubectl get pods
  ```
+ *   ![Get Pods](images/get-pods.PNG)
 * Run following command to find admin password of jenkins instance. Please ensure to wait for **cjoc-0** container to get into running state. Copy the string output of this command, this is your password to unlock your CloudBees Core instance. 
  ```
 kubectl exec cjoc-0 -- cat /var/jenkins_home/secrets/initialAdminPassword
  ```
+  *   ![Get Pswd](images/initialadminpassword.PNG)
 * CloudBees Core is published to interview via Ingress Controller. Let's find out the ingress route details for CJOC web interface. This would be something like  ```cjoc.X.X.X.X.xip.io ```
 
  ```
  kubectl get ingress
  ```
+   *   ![Get Pswd](images/get-ingress.PNG)
 * Launch a Web Browser and browse to the CJOC URL copied from last step. This will open CJOC interface. Enter the Admin password copied from previous steps.
 
 * CLick on Next and provide license details,  install required pluging and create users for admin interface. 
@@ -57,6 +61,7 @@ kubectl exec cjoc-0 -- cat /var/jenkins_home/secrets/initialAdminPassword
 This deployment uses [Azure Container Instances](https://azure.microsoft.com/en-us/pricing/details/container-instances/) as bootstrap deployment. You can delete the ACI instance created by deployment on sucessful completion. Although it doesn't cost anything since the ACI is in terminated state, it is advised to cleanup the ACI after sucessful completion of **Post Deployment Steps** given in this document.
 
 ACI name would be **coreBootstrapContainerExistingAKS** if you're using existing AKS Cluster , **coreBootstrapContainerNewAKS** if you're creating a new AKS cluster as a part of deployment.
+![ACI](images/ACI.PNG)
 
 ## Troubleshooting
 Review following settings and configuration if your  deployment fails
