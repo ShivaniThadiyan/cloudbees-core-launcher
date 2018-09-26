@@ -99,7 +99,7 @@
             "metadata": {
                 "description": "The base URI where artifacts required by this template are located including a trailing '/'"
             },
-            "defaultValue": "https://raw.githubusercontent.com/SpektraSystems/core-azure-launcher/master/ACI"
+            "defaultValue": "https://raw.githubusercontent.com/SpektraSystems/cloudbees-core-launcher/master/templates"
         },
         "_artifactsLocationSasToken": {
             "type": "securestring",
