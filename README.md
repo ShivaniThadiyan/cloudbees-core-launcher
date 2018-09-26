@@ -53,12 +53,16 @@ kubectl exec cjoc-0 -- cat /var/jenkins_home/secrets/initialAdminPassword
 * On Sucessful completion, you can login to CJOC interface and start using CloudBees Core.  See CloudBees Core [official documentation](https://go.cloudbees.com/docs/cloudbees-core/cloud-intro/) for further configurations and information.
 
 
-# Cleaning up 
+## Cleaning up 
 This deployment uses [Azure Container Instances](https://azure.microsoft.com/en-us/pricing/details/container-instances/) as bootstrap deployment. You can delete the ACI instance created by deployment on sucessful completion. Although it doesn't cost anything since the ACI is in terminated state, it is advised to cleanup the ACI after sucessful completion of **Post Deployment Steps** given in this document.
 
 ACI name would be **coreBootstrapContainerExistingAKS** if you're using existing AKS Cluster , **coreBootstrapContainerNewAKS** if you're creating a new AKS cluster as a part of deployment.
 
-# Troubleshooting
+## Troubleshooting
+Review following settings and configuration if your  deployment fails
 
+* Review the error logs on ARM deployment page. Commonly deployment failures are due to subscription quota limits etc.
+* In case of deployment failure with new AKS, Verify that supplied AAD SPN is correct. Review pre-requisite section for more details.
+* Incase of deployment failure with existing AKS, verify the Cluster Name and Resource Group Name of cluster is correct and try re-deploying. You can delete the failed ACI containers before your re-deploy. 
 
- 
+Reach out to [support](mailto:support@spektrasystems.com) in case of any questions. 
