@@ -229,5 +229,11 @@
               }
             }
           }
-    ]
+    ],
+"outputs": {
+    "Post Deployment Steps URL": {
+      "value": "http://bit.ly/coreazure",
+      "type": "string"   
+        }
+    }
 }
